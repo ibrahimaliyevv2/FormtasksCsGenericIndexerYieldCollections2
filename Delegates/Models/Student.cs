@@ -6,16 +6,17 @@ namespace Models
 {
     public class Student
     {
-        public Student()
+        private static int _totalCount;
+        public Student(string fullName,int point)
         {
-            _no++;
-            No = _no;
+            _totalCount++;
+            No = _totalCount;
+            FullName = fullName;
+            Point = point;
         }
-
-        private static int _no;
-        public int No { get; protected set; }
+        public int No { get; set; }
         public string FullName { get; set; }
-        public double Point { get; set; }
+        public int Point { get; set; }
         public string GroupNo { get; set; }
     }
 }
