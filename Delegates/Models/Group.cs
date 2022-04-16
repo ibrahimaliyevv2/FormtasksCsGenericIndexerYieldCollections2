@@ -4,61 +4,21 @@ using System.Text;
 
 namespace Models
 {
-    delegate checkStudent = (S)
-
     public class Group
     {
         public string Name { get; set; }
-        List<Student> Students = new List<Student>();
-
-        
-
-        public List<Student> Search(Student student)
+        public List<Student> Students { get; set; } = new List<Student>();
+        public List<Student> Search(Predicate<Student> func)
         {
-            foreach (var item in Students)
+            List<Student> students = new List<Student>();
+
+            foreach (Student student in Students)
             {
-                if ()
-                {
-
-                }
+                if(func(student))
+                        students.Add(student);
             }
+
+            return students;
         }
-
-        //public List<Student> Search(double point)
-        //{
-        //    foreach (var item in Students)
-        //    {
-        //        if (!(item.Point > point))
-        //        {
-        //            Students.Remove(item);
-        //        }
-        //    }
-        //    return Students;
-        //}
-
-        //public List<Student> Search(int length)
-        //{
-
-        //    foreach (var item in Students)
-        //    {
-        //        if (!(item.FullName.Length > length))
-        //        {
-        //            Students.Remove(item);
-        //        }
-        //    }
-        //    return Students;
-        //}
-
-        //public List<Student> Search(string groupNo)
-        //{
-        //    foreach (var item in Students)
-        //    {
-        //        if (!(item.GroupNo==groupNo))
-        //        {
-        //            Students.Remove(item);
-        //        }
-        //    }
-        //    return Students;
-        //}
     }
 }
