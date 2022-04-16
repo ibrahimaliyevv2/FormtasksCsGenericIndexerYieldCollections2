@@ -37,9 +37,38 @@ Library class
 - RemoveById() - Parametr olaraq nullable bir id qəbul edir və o Book obyektini tapıb Books listindən silir əgər id null olarsa geriyə
    NullReferenceException qaytarsın ümumiyyətlə göndərilən id-li book-u tapmasa geriyə NotFoundException qaytarsın
    
-   Task-2:
    
-   Indexer-e aid Task:
+Task-2: 
+
+Listin özünə məxsus metodları(Exists, FindAll və s.) və generic delegate-lərlə maaşı 4000-dən çox olan işçilərin olub-olmadığını yoxlayan və maaşı 1000-dən çox olan işçiləri tapıb çapa verən proqram yazın.
+
+
+Task-3:
+
+Əvvəlcə aşağıdakı class-ları yaradın:
+
+Student Class:
+-No
+-FullName
+-Point
+-GroupNo
+
+Group Class:
+-Name
+-Students List
+-Search() method
+
+
+Daha sonra delegate ilə listin aşağıdakı özünə məxsus metodlarından istifadə edin:
+
+Group group = new Group();
+var wantedStudnets = group.Search(x => x.FullName.Length>10);
+wantedStudnets = group.Search(x => x.Point > 65);
+wantedStudnets = group.Search(x => x.GroupNo == "BP202");
+   
+Task-4:
+   
+Indexer-e aid Task:
 1)Alphabet  class,
   Name- hansi dile aid oldugun gösterir.Name deyeri teyin olmamish instance almaq olmasın.
   Private letter adli  char Arrayi olsun.
