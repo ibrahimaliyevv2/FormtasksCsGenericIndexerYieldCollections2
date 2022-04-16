@@ -63,24 +63,5 @@ namespace DelegateTask2
             {
                 Console.WriteLine(item.Salary);
             }
-
-            List<int> nums = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-            foreach (var item in nums.FindAll(delegate(int num) { return num % 2 == 0; }))
-            {
-                Console.WriteLine(item);
-            }
-
-            var firstEvenNum = nums.Find(x => x % 2 == 0);
-            Console.WriteLine("firstEvenNum: "+firstEvenNum);
-
-            Console.WriteLine(nums.Exists(x=>x>5));
-
-        }
-
-        static bool IsPassed(Student student)
-        {
-            return student.Point > 50;
-        }
     }
 }
